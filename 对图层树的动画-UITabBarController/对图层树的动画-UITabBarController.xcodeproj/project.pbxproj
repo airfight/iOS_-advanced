@@ -1,0 +1,538 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B725ACEB1DBF4F2D00A04670 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B725ACEA1DBF4F2D00A04670 /* main.m */; };
+		B725ACEE1DBF4F2D00A04670 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B725ACED1DBF4F2D00A04670 /* AppDelegate.m */; };
+		B725ACF11DBF4F2D00A04670 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B725ACF01DBF4F2D00A04670 /* ViewController.m */; };
+		B725ACF41DBF4F2D00A04670 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B725ACF21DBF4F2D00A04670 /* Main.storyboard */; };
+		B725ACF61DBF4F2D00A04670 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B725ACF51DBF4F2D00A04670 /* Assets.xcassets */; };
+		B725ACF91DBF4F2D00A04670 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B725ACF71DBF4F2D00A04670 /* LaunchScreen.storyboard */; };
+		B725AD041DBF4F2D00A04670 /* ________UITabBarControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B725AD031DBF4F2D00A04670 /* ________UITabBarControllerTests.m */; };
+		B725AD0F1DBF4F2D00A04670 /* ________UITabBarControllerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B725AD0E1DBF4F2D00A04670 /* ________UITabBarControllerUITests.m */; };
+		B725AD1E1DBF4F5300A04670 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B725AD1D1DBF4F5300A04670 /* FirstViewController.m */; };
+		B725AD211DBF4F5A00A04670 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B725AD201DBF4F5A00A04670 /* SecondViewController.m */; };
+		B75EF74B1DBF5E8800A68E87 /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B75EF74A1DBF5E8800A68E87 /* 1.jpg */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B725AD001DBF4F2D00A04670 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B725ACDE1DBF4F2D00A04670 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B725ACE51DBF4F2D00A04670;
+			remoteInfo = "对图层树的动画-UITabBarController";
+		};
+		B725AD0B1DBF4F2D00A04670 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B725ACDE1DBF4F2D00A04670 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B725ACE51DBF4F2D00A04670;
+			remoteInfo = "对图层树的动画-UITabBarController";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		B725ACE61DBF4F2D00A04670 /* 对图层树的动画-UITabBarController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "对图层树的动画-UITabBarController.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B725ACEA1DBF4F2D00A04670 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B725ACEC1DBF4F2D00A04670 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		B725ACED1DBF4F2D00A04670 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		B725ACEF1DBF4F2D00A04670 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		B725ACF01DBF4F2D00A04670 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		B725ACF31DBF4F2D00A04670 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B725ACF51DBF4F2D00A04670 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B725ACF81DBF4F2D00A04670 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B725ACFA1DBF4F2D00A04670 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B725ACFF1DBF4F2D00A04670 /* 对图层树的动画-UITabBarControllerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "对图层树的动画-UITabBarControllerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B725AD031DBF4F2D00A04670 /* ________UITabBarControllerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "________UITabBarControllerTests.m"; sourceTree = "<group>"; };
+		B725AD051DBF4F2D00A04670 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B725AD0A1DBF4F2D00A04670 /* 对图层树的动画-UITabBarControllerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "对图层树的动画-UITabBarControllerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B725AD0E1DBF4F2D00A04670 /* ________UITabBarControllerUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "________UITabBarControllerUITests.m"; sourceTree = "<group>"; };
+		B725AD101DBF4F2D00A04670 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B725AD1C1DBF4F5300A04670 /* FirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
+		B725AD1D1DBF4F5300A04670 /* FirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		B725AD1F1DBF4F5A00A04670 /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		B725AD201DBF4F5A00A04670 /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		B75EF74A1DBF5E8800A68E87 /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B725ACE31DBF4F2D00A04670 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B725ACFC1DBF4F2D00A04670 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B725AD071DBF4F2D00A04670 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B725ACDD1DBF4F2D00A04670 = {
+			isa = PBXGroup;
+			children = (
+				B725ACE81DBF4F2D00A04670 /* 对图层树的动画-UITabBarController */,
+				B725AD021DBF4F2D00A04670 /* 对图层树的动画-UITabBarControllerTests */,
+				B725AD0D1DBF4F2D00A04670 /* 对图层树的动画-UITabBarControllerUITests */,
+				B725ACE71DBF4F2D00A04670 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B725ACE71DBF4F2D00A04670 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B725ACE61DBF4F2D00A04670 /* 对图层树的动画-UITabBarController.app */,
+				B725ACFF1DBF4F2D00A04670 /* 对图层树的动画-UITabBarControllerTests.xctest */,
+				B725AD0A1DBF4F2D00A04670 /* 对图层树的动画-UITabBarControllerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B725ACE81DBF4F2D00A04670 /* 对图层树的动画-UITabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				B75EF74A1DBF5E8800A68E87 /* 1.jpg */,
+				B725ACEC1DBF4F2D00A04670 /* AppDelegate.h */,
+				B725ACED1DBF4F2D00A04670 /* AppDelegate.m */,
+				B725ACEF1DBF4F2D00A04670 /* ViewController.h */,
+				B725ACF01DBF4F2D00A04670 /* ViewController.m */,
+				B725AD1C1DBF4F5300A04670 /* FirstViewController.h */,
+				B725AD1D1DBF4F5300A04670 /* FirstViewController.m */,
+				B725AD1F1DBF4F5A00A04670 /* SecondViewController.h */,
+				B725AD201DBF4F5A00A04670 /* SecondViewController.m */,
+				B725ACF21DBF4F2D00A04670 /* Main.storyboard */,
+				B725ACF51DBF4F2D00A04670 /* Assets.xcassets */,
+				B725ACF71DBF4F2D00A04670 /* LaunchScreen.storyboard */,
+				B725ACFA1DBF4F2D00A04670 /* Info.plist */,
+				B725ACE91DBF4F2D00A04670 /* Supporting Files */,
+			);
+			path = "对图层树的动画-UITabBarController";
+			sourceTree = "<group>";
+		};
+		B725ACE91DBF4F2D00A04670 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B725ACEA1DBF4F2D00A04670 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B725AD021DBF4F2D00A04670 /* 对图层树的动画-UITabBarControllerTests */ = {
+			isa = PBXGroup;
+			children = (
+				B725AD031DBF4F2D00A04670 /* ________UITabBarControllerTests.m */,
+				B725AD051DBF4F2D00A04670 /* Info.plist */,
+			);
+			path = "对图层树的动画-UITabBarControllerTests";
+			sourceTree = "<group>";
+		};
+		B725AD0D1DBF4F2D00A04670 /* 对图层树的动画-UITabBarControllerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				B725AD0E1DBF4F2D00A04670 /* ________UITabBarControllerUITests.m */,
+				B725AD101DBF4F2D00A04670 /* Info.plist */,
+			);
+			path = "对图层树的动画-UITabBarControllerUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B725ACE51DBF4F2D00A04670 /* 对图层树的动画-UITabBarController */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B725AD131DBF4F2D00A04670 /* Build configuration list for PBXNativeTarget "对图层树的动画-UITabBarController" */;
+			buildPhases = (
+				B725ACE21DBF4F2D00A04670 /* Sources */,
+				B725ACE31DBF4F2D00A04670 /* Frameworks */,
+				B725ACE41DBF4F2D00A04670 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "对图层树的动画-UITabBarController";
+			productName = "对图层树的动画-UITabBarController";
+			productReference = B725ACE61DBF4F2D00A04670 /* 对图层树的动画-UITabBarController.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B725ACFE1DBF4F2D00A04670 /* 对图层树的动画-UITabBarControllerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B725AD161DBF4F2D00A04670 /* Build configuration list for PBXNativeTarget "对图层树的动画-UITabBarControllerTests" */;
+			buildPhases = (
+				B725ACFB1DBF4F2D00A04670 /* Sources */,
+				B725ACFC1DBF4F2D00A04670 /* Frameworks */,
+				B725ACFD1DBF4F2D00A04670 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B725AD011DBF4F2D00A04670 /* PBXTargetDependency */,
+			);
+			name = "对图层树的动画-UITabBarControllerTests";
+			productName = "对图层树的动画-UITabBarControllerTests";
+			productReference = B725ACFF1DBF4F2D00A04670 /* 对图层树的动画-UITabBarControllerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		B725AD091DBF4F2D00A04670 /* 对图层树的动画-UITabBarControllerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B725AD191DBF4F2D00A04670 /* Build configuration list for PBXNativeTarget "对图层树的动画-UITabBarControllerUITests" */;
+			buildPhases = (
+				B725AD061DBF4F2D00A04670 /* Sources */,
+				B725AD071DBF4F2D00A04670 /* Frameworks */,
+				B725AD081DBF4F2D00A04670 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B725AD0C1DBF4F2D00A04670 /* PBXTargetDependency */,
+			);
+			name = "对图层树的动画-UITabBarControllerUITests";
+			productName = "对图层树的动画-UITabBarControllerUITests";
+			productReference = B725AD0A1DBF4F2D00A04670 /* 对图层树的动画-UITabBarControllerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B725ACDE1DBF4F2D00A04670 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = Giant;
+				TargetAttributes = {
+					B725ACE51DBF4F2D00A04670 = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					B725ACFE1DBF4F2D00A04670 = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = B725ACE51DBF4F2D00A04670;
+					};
+					B725AD091DBF4F2D00A04670 = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = B725ACE51DBF4F2D00A04670;
+					};
+				};
+			};
+			buildConfigurationList = B725ACE11DBF4F2D00A04670 /* Build configuration list for PBXProject "对图层树的动画-UITabBarController" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B725ACDD1DBF4F2D00A04670;
+			productRefGroup = B725ACE71DBF4F2D00A04670 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B725ACE51DBF4F2D00A04670 /* 对图层树的动画-UITabBarController */,
+				B725ACFE1DBF4F2D00A04670 /* 对图层树的动画-UITabBarControllerTests */,
+				B725AD091DBF4F2D00A04670 /* 对图层树的动画-UITabBarControllerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B725ACE41DBF4F2D00A04670 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B725ACF91DBF4F2D00A04670 /* LaunchScreen.storyboard in Resources */,
+				B725ACF61DBF4F2D00A04670 /* Assets.xcassets in Resources */,
+				B725ACF41DBF4F2D00A04670 /* Main.storyboard in Resources */,
+				B75EF74B1DBF5E8800A68E87 /* 1.jpg in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B725ACFD1DBF4F2D00A04670 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B725AD081DBF4F2D00A04670 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B725ACE21DBF4F2D00A04670 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B725AD211DBF4F5A00A04670 /* SecondViewController.m in Sources */,
+				B725ACF11DBF4F2D00A04670 /* ViewController.m in Sources */,
+				B725ACEE1DBF4F2D00A04670 /* AppDelegate.m in Sources */,
+				B725ACEB1DBF4F2D00A04670 /* main.m in Sources */,
+				B725AD1E1DBF4F5300A04670 /* FirstViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B725ACFB1DBF4F2D00A04670 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B725AD041DBF4F2D00A04670 /* ________UITabBarControllerTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B725AD061DBF4F2D00A04670 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B725AD0F1DBF4F2D00A04670 /* ________UITabBarControllerUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B725AD011DBF4F2D00A04670 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B725ACE51DBF4F2D00A04670 /* 对图层树的动画-UITabBarController */;
+			targetProxy = B725AD001DBF4F2D00A04670 /* PBXContainerItemProxy */;
+		};
+		B725AD0C1DBF4F2D00A04670 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B725ACE51DBF4F2D00A04670 /* 对图层树的动画-UITabBarController */;
+			targetProxy = B725AD0B1DBF4F2D00A04670 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B725ACF21DBF4F2D00A04670 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B725ACF31DBF4F2D00A04670 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B725ACF71DBF4F2D00A04670 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B725ACF81DBF4F2D00A04670 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B725AD111DBF4F2D00A04670 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		B725AD121DBF4F2D00A04670 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B725AD141DBF4F2D00A04670 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "对图层树的动画-UITabBarController/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Ozner.--------UITabBarController";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		B725AD151DBF4F2D00A04670 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "对图层树的动画-UITabBarController/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Ozner.--------UITabBarController";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		B725AD171DBF4F2D00A04670 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "对图层树的动画-UITabBarControllerTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Ozner.--------UITabBarControllerTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/对图层树的动画-UITabBarController.app/对图层树的动画-UITabBarController";
+			};
+			name = Debug;
+		};
+		B725AD181DBF4F2D00A04670 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "对图层树的动画-UITabBarControllerTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Ozner.--------UITabBarControllerTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/对图层树的动画-UITabBarController.app/对图层树的动画-UITabBarController";
+			};
+			name = Release;
+		};
+		B725AD1A1DBF4F2D00A04670 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "对图层树的动画-UITabBarControllerUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Ozner.--------UITabBarControllerUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "对图层树的动画-UITabBarController";
+			};
+			name = Debug;
+		};
+		B725AD1B1DBF4F2D00A04670 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "对图层树的动画-UITabBarControllerUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Ozner.--------UITabBarControllerUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "对图层树的动画-UITabBarController";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B725ACE11DBF4F2D00A04670 /* Build configuration list for PBXProject "对图层树的动画-UITabBarController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B725AD111DBF4F2D00A04670 /* Debug */,
+				B725AD121DBF4F2D00A04670 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B725AD131DBF4F2D00A04670 /* Build configuration list for PBXNativeTarget "对图层树的动画-UITabBarController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B725AD141DBF4F2D00A04670 /* Debug */,
+				B725AD151DBF4F2D00A04670 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B725AD161DBF4F2D00A04670 /* Build configuration list for PBXNativeTarget "对图层树的动画-UITabBarControllerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B725AD171DBF4F2D00A04670 /* Debug */,
+				B725AD181DBF4F2D00A04670 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B725AD191DBF4F2D00A04670 /* Build configuration list for PBXNativeTarget "对图层树的动画-UITabBarControllerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B725AD1A1DBF4F2D00A04670 /* Debug */,
+				B725AD1B1DBF4F2D00A04670 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B725ACDE1DBF4F2D00A04670 /* Project object */;
+}
