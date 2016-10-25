@@ -140,7 +140,7 @@
 #endif
 #if 1
     
-    self.images = @[[UIImage imageNamed:@"v.jpg"],[UIImage imageNamed:@"1"],[UIImage imageNamed:@"v.jpg"]];
+    //    self.images = @[[UIImage imageNamed:@"v.jpg"],[UIImage imageNamed:@"1"],[UIImage imageNamed:@"v.jpg"],[UIImage imageNamed:@"1"]];
     
     
 #endif
@@ -173,16 +173,28 @@
     //apply animation to layer
     [self.colorLayer addAnimation:animation forKey:nil];
 #endif
+#if 1
     CATransition *transition = [CATransition animation];
+    //type
+    //kCATransitionFade
+    //kCATransitionMoveIn
+    //kCATransitionPush
+    //kCATransitionReveal
     transition.type = kCATransitionFade;
-    
+    //型都有一个默认的动画方向，它们都从左侧滑入，但是你可以通过subtype来控制它们的方向，提供了如下四种类型：
+    //    kCATransitionFromRight
+    //    kCATransitionFromLeft
+    //    kCATransitionFromTop
+    //    kCATransitionFromBottom
+    transition.subtype = kCATransitionFromBottom;
     [self.imageView.layer addAnimation:transition forKey:nil];
     
     UIImage *currentImage = self.imageView.image;
     NSUInteger index = [self.images indexOfObject:currentImage];
     index = (index + 1) % [self.images count];
     self.imageView.image = self.images[index];
-    _imageView.contentMode = UIViewContentModeScaleAspectFit;
+    //    _imageView.contentMode = UIViewContentModeScaleAspectFit;
+#endif
     
 }
 
