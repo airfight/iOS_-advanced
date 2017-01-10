@@ -23,9 +23,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    /* 属性动画
+    // 属性动画
      #if 0
-     
      //create sublayer
      self.colorLayer = [CALayer layer];
      self.colorLayer.frame = CGRectMake(50.0f, 50.0f, 100.0f, 100.0f);
@@ -83,7 +82,7 @@
      
      #endif
      
-     #if 1
+     #if 0
      
      //add the ship
      CALayer *shipLayer = [CALayer layer];
@@ -101,7 +100,7 @@
      
      
      #endif
-     */
+     
     //动画组
 #if 0
     //create a path

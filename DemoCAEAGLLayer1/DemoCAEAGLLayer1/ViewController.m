@@ -100,7 +100,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-#if 0
+#if 1
     
     //Xcode8 下 Metal API Validation Enabled
     //          Metal GPU Frame Capture Enabled
