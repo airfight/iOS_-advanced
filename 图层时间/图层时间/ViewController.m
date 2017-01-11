@@ -14,6 +14,14 @@
 
 @property (nonatomic,strong) UIView *layerView;
 
+
+@property (nonatomic, strong) UIImageView *ballView;
+@property (nonatomic, strong) NSTimer *timer;
+@property (nonatomic, assign) NSTimeInterval duration;
+@property (nonatomic, assign) NSTimeInterval timeOffset;
+@property (nonatomic, strong) id fromValue;
+@property (nonatomic, strong) id toValue;
+
 @end
 
 @implementation ViewController
@@ -65,6 +73,13 @@
 //    self.colorLayer.backgroundColor = [UIColor redColor].CGColor;
 //    [self.view.layer addSublayer:self.colorLayer];
 }
+
+
+float interpolate(float from, float to, float time)
+{
+    return (to - from) * time + from;
+}
+
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
