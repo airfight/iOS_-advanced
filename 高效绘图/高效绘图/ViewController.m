@@ -33,25 +33,27 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-#if 0
+#if 1
     DrawingView *drawView = [[DrawingView alloc] init];
     drawView.frame = self.view.frame;
     drawView.backgroundColor = [UIColor whiteColor];
     
     [self.view addSubview:drawView];
 #endif
-    
+#if 0
     GYDrawingView *gydrawView = [[GYDrawingView alloc] init];
     gydrawView.frame = self.view.frame;
     gydrawView.backgroundColor = [UIColor whiteColor];
     
     [self.view addSubview:gydrawView];
-    
+#endif
+#if 1
     
     YYFPSLabel *yyLb = [[YYFPSLabel alloc] initWithFrame:CGRectMake(CGRectGetWidth(self.view.frame)-60, CGRectGetHeight(self.view.frame)-30, 60, 30)];
     [self.navigationController.view addSubview:yyLb];
     
-    
+#endif
+#if 0
     _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame)) style:UITableViewStyleGrouped];
     
     _tableView.delegate = self;
@@ -70,7 +72,7 @@
     CATransform3D transform = CATransform3DIdentity;
     transform.m34 = -1.0 / CAMERA_DISTANCE;
     self.scrollView.layer.sublayerTransform = transform;
-
+#endif
     /*
     for (int z = DEPTH - 1; z >= 0; z--) {
         for (int y = 0; y < HEIGHT; y++) {
