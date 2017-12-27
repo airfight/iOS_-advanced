@@ -10,12 +10,15 @@
 #import "GYOperation.h"
 #import "GYBuyTickets.h"
 
+#define queueIdendifer "com.gy.test"
+
 typedef void(^GYblock)(void);
 
 @interface ViewController ()
 
 @property (nonatomic,copy) GYblock block;
 @property (nonatomic,strong) dispatch_queue_t queuet;
+@property (nonatomic,strong) NSCondition *condition;
 
 @end
 
@@ -23,7 +26,7 @@ typedef void(^GYblock)(void);
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    _condition = [[NSCondition alloc] init];
     /** 方法一，需要start */
 //    NSThread *thread1 = [[NSThread alloc] initWithTarget:self selector:@selector(doSomething1:) object:@"NSThread1"];
 //    // 线程加入线程池等待CPU调度，时间很快，几乎是立刻执行
@@ -46,11 +49,100 @@ typedef void(^GYblock)(void);
 
 //    [self groupCount];
 //    [self gcdSemaphore];
-    [self gcdSuspend];
-    
+//    [self group];
 
+//    NSURL *directoryURL; // assume this is set to a directory
+//    int const fd = open([[directoryURL path] fileSystemRepresentation], O_EVTONLY);
+//    if (fd < 0) {
+//        char buffer[80];
+//        strerror_r(errno, buffer, sizeof(buffer));
+//        NSLog(@"Unable to open \"%@\": %s (%d)", [directoryURL path], buffer, errno);
+//        return;
+//    }
+//    dispatch_source_t source = dispatch_source_create(DISPATCH_SOURCE_TYPE_VNODE, fd,
+//                                                      DISPATCH_VNODE_WRITE | DISPATCH_VNODE_DELETE, DISPATCH_TARGET_QUEUE_DEFAULT);
+//    dispatch_source_set_event_handler(source, ^(){
+//        unsigned long const data = dispatch_source_get_data(source);
+//        if (data & DISPATCH_VNODE_WRITE) {
+//            NSLog(@"The directory changed.");
+//        }
+//        if (data & DISPATCH_VNODE_DELETE) {
+//            NSLog(@"The directory has been deleted.");
+//        }
+//    });
+//    dispatch_source_set_cancel_handler(source, ^(){
+//        close(fd);
+//    });
+//    dispatch_resume(source);
+ 
+    [self deadLockCase2];
+    
 }
 
+#pragma mark - deadlock
+
+- (void)deadLockCase1 {
+    NSLog(@"1");
+    //主队列的同步线程，按照FIFO的原则（先入先出），2排在3后面会等3执行完，但因为同步线程，3又要等2执行完，相互等待成为死锁。
+    dispatch_sync(dispatch_get_main_queue(), ^{
+        NSLog(@"2");
+    });
+    NSLog(@"3");
+}
+
+- (void)deadLockCase2 {
+    NSLog(@"1");
+    //3会等2，因为2在全局并行队列里，不需要等待3，这样2执行完回到主队列，3就开始执行
+    dispatch_sync(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+        NSLog(@"2");
+    });
+    NSLog(@"3");
+}
+
+- (void)deadLockCase3 {
+    dispatch_queue_t serialQueue = dispatch_queue_create(queueIdendifer, DISPATCH_QUEUE_SERIAL);
+    NSLog(@"1");
+    dispatch_async(serialQueue, ^{
+        NSLog(@"2");
+        //串行队列里面同步一个串行队列就会死锁
+        dispatch_sync(serialQueue, ^{
+            NSLog(@"3");
+        });
+        NSLog(@"4");
+    });
+    NSLog(@"5");
+}
+
+- (void)deadLockCase4 {
+    NSLog(@"1");
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        NSLog(@"2");
+        //将同步的串行队列放到另外一个线程就能够解决
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            [NSThread sleepForTimeInterval:2];
+            NSLog(@"3");
+        });
+        NSLog(@"4");
+    });
+    NSLog(@"5");
+}
+
+- (void)deadLockCase5 {
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        NSLog(@"1");
+        //回到主线程发现死循环后面就没法执行了
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            NSLog(@"2");
+        });
+        NSLog(@"3");
+    });
+    NSLog(@"4");
+    //死循环
+    while (1) {
+        //
+    }
+}
+//dispatch_queue_set_specific和dispatch_get_specific 可通过标记检测是否是同一个队列来避免死锁
 #pragma mark - NSThread
 
 #pragma mark - NSThread Lock
@@ -62,6 +154,106 @@ typedef void(^GYblock)(void);
 }
 
 #pragma mark - GCD
+
+- (void)gcdSourceTimer {
+ 
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    dispatch_source_t source = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER,0, 0, queue);
+    
+    //    dispatch_time_t start;
+    dispatch_source_set_timer(source, dispatch_walltime(NULL, 0),1 * NSEC_PER_SEC ,0);
+    __block int i = 666;
+    dispatch_source_set_event_handler(source, ^(){
+        NSLog(@"%@",source);
+        
+        NSLog(@"Time flies%d",i);
+    });
+    dispatch_resume(source);
+    NSLog(@"start");
+    
+}
+
+- (void)gcdblockCancle {
+    
+    dispatch_queue_t cocurrentQueue = dispatch_queue_create(queueIdendifer, DISPATCH_QUEUE_SERIAL);
+    NSLog(@"start");
+    dispatch_block_t block = dispatch_block_create(0, ^{
+        
+        NSLog(@"run block1");
+        [NSThread sleepForTimeInterval:2];
+        NSLog(@"run end1");
+        
+    });
+    
+    dispatch_block_t block2 = dispatch_block_create(0, ^{
+        
+        NSLog(@"run block2");
+        NSLog(@"run end2");
+        
+    });
+    
+    dispatch_async(cocurrentQueue, block);
+    //一般串行可取消  并行的话会提前进入任务  就无法取消当前block
+    dispatch_async(cocurrentQueue, block2);
+    dispatch_block_cancel(block);
+    dispatch_block_cancel(block2);
+    NSLog(@"end");
+    
+}
+
+- (void)gcdblockNotify {
+    
+    dispatch_queue_t cocurrentQueue = dispatch_queue_create(queueIdendifer, DISPATCH_QUEUE_CONCURRENT);
+    NSLog(@"start");
+    dispatch_block_t block = dispatch_block_create(0, ^{
+        
+        NSLog(@"run block1");
+        [NSThread sleepForTimeInterval:2];
+        NSLog(@"run end1");
+        
+    });
+    
+    dispatch_async(cocurrentQueue, block);
+    
+    dispatch_block_t block2 = dispatch_block_create(0, ^{
+        
+        NSLog(@"run block2");
+        NSLog(@"run end2");
+        
+    });
+    
+    //可以监视指定dispatch block结束，然后再加入一个block到队列中。三个参数分别为，第一个是需要监视的block，第二个参数是需要提交执行的队列，第三个是待加入到队列中的block
+    dispatch_block_notify(block, cocurrentQueue, block2);
+    NSLog(@"end");
+    
+}
+
+- (void)gcdblockWait {
+    
+    dispatch_queue_t cocurrentQueue = dispatch_queue_create(queueIdendifer, DISPATCH_QUEUE_CONCURRENT);
+    NSLog(@"start");
+    dispatch_block_t block = dispatch_block_create(0, ^{
+        
+        NSLog(@"run block");
+        
+    });
+    
+    dispatch_async(cocurrentQueue, block);
+    
+    dispatch_block_t qosBlock = dispatch_block_create_with_qos_class(0, QOS_CLASS_DEFAULT, -1, ^{
+
+        [self requestNetWorkWithblock:^{
+            [NSThread sleepForTimeInterval:3];
+            NSLog(@"run qosblock");
+        }];
+        
+    });
+    //会一直等待block结束  异步无法监控
+    dispatch_async(cocurrentQueue, qosBlock);
+    dispatch_block_wait(qosBlock, DISPATCH_TIME_FOREVER);
+    NSLog(@"end");
+    
+}
 
 - (void)gcdafter {
     
@@ -92,12 +284,12 @@ typedef void(^GYblock)(void);
 - (void)gcdSemaphore {
     
    dispatch_semaphore_t semaphore = dispatch_semaphore_create(1);
-   dispatch_queue_t queue = dispatch_queue_create("com.gy", DISPATCH_QUEUE_CONCURRENT);
+   dispatch_queue_t queue = dispatch_queue_create(queueIdendifer, DISPATCH_QUEUE_CONCURRENT);
     
     for (int i = 0; i < 1000; i++) {
     
         dispatch_async(queue, ^{
-            //当信号量大于0时等待结束
+            //当信号量大于0时等待结束 信号量-1
             dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
             NSLog(@"semaphore:%d",i);
             //使信号量加1
@@ -179,6 +371,7 @@ typedef void(^GYblock)(void);
         }];
     });
     
+    dispatch_group_wait(group, DISPATCH_TIME_FOREVER);//等待所有任务完成
     dispatch_group_notify(group, concurrnet, ^{
         
         NSLog(@"group end");
