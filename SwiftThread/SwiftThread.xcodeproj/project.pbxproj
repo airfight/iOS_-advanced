@@ -14,6 +14,7 @@
 		688E9BB41FF24CE900884DAB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 688E9BB21FF24CE900884DAB /* LaunchScreen.storyboard */; };
 		688E9BBF1FF24CEA00884DAB /* SwiftThreadTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688E9BBE1FF24CEA00884DAB /* SwiftThreadTests.swift */; };
 		688E9BCA1FF24CEA00884DAB /* SwiftThreadUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688E9BC91FF24CEA00884DAB /* SwiftThreadUITests.swift */; };
+		689051451FFDED5A00524BC4 /* TimerVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689051441FFDED5A00524BC4 /* TimerVc.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		688E9BC51FF24CEA00884DAB /* SwiftThreadUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftThreadUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		688E9BC91FF24CEA00884DAB /* SwiftThreadUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftThreadUITests.swift; sourceTree = "<group>"; };
 		688E9BCB1FF24CEA00884DAB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		689051441FFDED5A00524BC4 /* TimerVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerVc.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			children = (
 				688E9BA91FF24CE900884DAB /* AppDelegate.swift */,
 				688E9BAB1FF24CE900884DAB /* ViewController.swift */,
+				689051441FFDED5A00524BC4 /* TimerVc.swift */,
 				688E9BAD1FF24CE900884DAB /* Main.storyboard */,
 				688E9BB01FF24CE900884DAB /* Assets.xcassets */,
 				688E9BB21FF24CE900884DAB /* LaunchScreen.storyboard */,
@@ -260,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				688E9BAC1FF24CE900884DAB /* ViewController.swift in Sources */,
+				689051451FFDED5A00524BC4 /* TimerVc.swift in Sources */,
 				688E9BAA1FF24CE900884DAB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

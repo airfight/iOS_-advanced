@@ -17,6 +17,8 @@
 		688E9C191FF24D6300884DAB /* GYBuyTickets.m in Sources */ = {isa = PBXBuildFile; fileRef = 688E9C161FF24D6300884DAB /* GYBuyTickets.m */; };
 		688E9C1A1FF24D6300884DAB /* GYOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 688E9C171FF24D6300884DAB /* GYOperation.m */; };
 		688E9C1D1FF24D6D00884DAB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 688E9C1B1FF24D6D00884DAB /* ViewController.m */; };
+		689051431FFDEB7C00524BC4 /* TimerVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 689051421FFDEB7C00524BC4 /* TimerVc.m */; };
+		689051481FFDF22800524BC4 /* GYWeakProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 689051471FFDF22800524BC4 /* GYWeakProxy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,10 @@
 		688E9C181FF24D6300884DAB /* GYOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GYOperation.h; sourceTree = "<group>"; };
 		688E9C1B1FF24D6D00884DAB /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		688E9C1C1FF24D6D00884DAB /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		689051411FFDEB7C00524BC4 /* TimerVc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TimerVc.h; sourceTree = "<group>"; };
+		689051421FFDEB7C00524BC4 /* TimerVc.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TimerVc.m; sourceTree = "<group>"; };
+		689051461FFDF22800524BC4 /* GYWeakProxy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GYWeakProxy.h; sourceTree = "<group>"; };
+		689051471FFDF22800524BC4 /* GYWeakProxy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GYWeakProxy.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,10 +117,14 @@
 				688E9BE41FF24D0400884DAB /* AppDelegate.m */,
 				688E9C1C1FF24D6D00884DAB /* ViewController.h */,
 				688E9C1B1FF24D6D00884DAB /* ViewController.m */,
+				689051411FFDEB7C00524BC4 /* TimerVc.h */,
+				689051421FFDEB7C00524BC4 /* TimerVc.m */,
 				688E9C181FF24D6300884DAB /* GYOperation.h */,
 				688E9C171FF24D6300884DAB /* GYOperation.m */,
 				688E9C151FF24D6300884DAB /* GYBuyTickets.h */,
 				688E9C161FF24D6300884DAB /* GYBuyTickets.m */,
+				689051461FFDF22800524BC4 /* GYWeakProxy.h */,
+				689051471FFDF22800524BC4 /* GYWeakProxy.m */,
 				688E9BE91FF24D0500884DAB /* Main.storyboard */,
 				688E9BEC1FF24D0500884DAB /* Assets.xcassets */,
 				688E9BEE1FF24D0500884DAB /* LaunchScreen.storyboard */,
@@ -275,6 +285,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				689051481FFDF22800524BC4 /* GYWeakProxy.m in Sources */,
+				689051431FFDEB7C00524BC4 /* TimerVc.m in Sources */,
 				688E9BF31FF24D0500884DAB /* main.m in Sources */,
 				688E9C1A1FF24D6300884DAB /* GYOperation.m in Sources */,
 				688E9BE51FF24D0400884DAB /* AppDelegate.m in Sources */,

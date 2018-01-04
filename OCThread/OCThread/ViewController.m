@@ -14,15 +14,18 @@
 
 typedef void(^GYblock)(void);
 
+__weak NSString *string__weak = nil;
 @interface ViewController ()
 
 @property (nonatomic,copy) GYblock block;
 @property (nonatomic,strong) dispatch_queue_t queuet;
 @property (nonatomic,strong) NSCondition *condition;
+@property (nonatomic,strong) UIView *view1;
 
 @end
 
 @implementation ViewController
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -75,10 +78,31 @@ typedef void(^GYblock)(void);
 //    });
 //    dispatch_resume(source);
  
-    [self deadLockCase2];
+//    [self deadLockCase1];
     
+    self.view1 = ({
+        [UIView new];
+//        [UIColor redColor];
+        
+    });
+    self.view1.frame = CGRectMake(0, 0, 200, 200);
+    [self.view addSubview:self.view1];
+    NSString *str = [NSString stringWithFormat:@"zhuguangyang"];
+    string__weak = str;
+    NSLog(@"%@",string__weak);
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    NSLog(@"%@",string__weak);
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    NSLog(@"%@",string__weak);
+}
 #pragma mark - deadlock
 
 - (void)deadLockCase1 {
