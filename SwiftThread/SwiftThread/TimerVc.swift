@@ -15,6 +15,27 @@
 
 import UIKit
 
+protocol Pizzeria {
+    func makePizza(_ ingredients:[String])
+    func makeMargherita()
+}
+
+extension Pizzeria {
+    func makeMargherita() {
+        return makePizza(["1"])
+    }
+}
+
+struct Lomabards:Pizzeria {
+    func makeMargherita() {
+        return makePizza(["2"])
+    }
+    
+    func makePizza(_ ingredients: [String]) {
+        print(ingredients)
+    }
+}
+
 class TimerVc: UIViewController {
     
     //MARK: - Attributes
@@ -25,6 +46,7 @@ class TimerVc: UIViewController {
 //        timer = Timer(timeInterval: 1, target: self, selector: #selector(run), userInfo: nil, repeats: true)
 //        RunLoop.current.add(timer, forMode: RunLoopMode.defaultRunLoopMode)
 //        timer.fire()
+        
     }
     
     @objc func run() {

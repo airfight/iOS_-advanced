@@ -9,7 +9,6 @@
 #import "ViewController.h"
 #import "GYOperation.h"
 #import "GYBuyTickets.h"
-
 #define queueIdendifer "com.gy.test"
 
 typedef void(^GYblock)(void);
@@ -90,6 +89,7 @@ __weak NSString *string__weak = nil;
     NSString *str = [NSString stringWithFormat:@"zhuguangyang"];
     string__weak = str;
     NSLog(@"%@",string__weak);
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated

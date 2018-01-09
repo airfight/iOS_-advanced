@@ -63,6 +63,7 @@
 		689051421FFDEB7C00524BC4 /* TimerVc.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TimerVc.m; sourceTree = "<group>"; };
 		689051461FFDF22800524BC4 /* GYWeakProxy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GYWeakProxy.h; sourceTree = "<group>"; };
 		689051471FFDF22800524BC4 /* GYWeakProxy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GYWeakProxy.m; sourceTree = "<group>"; };
+		689083021FFF8E7600DD2D0B /* libGYLi.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libGYLi.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +98,7 @@
 				688E9BFB1FF24D0500884DAB /* OCThreadTests */,
 				688E9C061FF24D0500884DAB /* OCThreadUITests */,
 				688E9BE11FF24D0400884DAB /* Products */,
+				689083001FFF8E7600DD2D0B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -150,6 +152,14 @@
 				688E9C091FF24D0500884DAB /* Info.plist */,
 			);
 			path = OCThreadUITests;
+			sourceTree = "<group>";
+		};
+		689083001FFF8E7600DD2D0B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				689083021FFF8E7600DD2D0B /* libGYLi.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

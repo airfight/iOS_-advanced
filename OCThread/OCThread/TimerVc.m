@@ -36,6 +36,10 @@
     GYWeakProxy *PROXY = [GYWeakProxy proxyWithTarget:self];
     _timer = [NSTimer scheduledTimerWithTimeInterval:1 target:PROXY selector:@selector(run) userInfo:nil repeats:true];
     [[NSRunLoop currentRunLoop] addTimer:_timer forMode:NSDefaultRunLoopMode];
+    
+    [self performSelector:@selector(invalide) withObject:nil afterDelay:3];
+    
+    
 }
 
 - (void)run
@@ -43,10 +47,17 @@
     NSLog(@"run");
 }
 
-- (void)dealloc
+- (void)invalide
 {
     [_timer invalidate];
     _timer = nil;
+}
+- (void)dealloc
+{
+    
+    [_timer invalidate];
+    _timer = nil;
+    [super dealloc];
 }
 
 
