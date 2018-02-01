@@ -10,6 +10,8 @@
 #import "GYOperation.h"
 #import "GYBuyTickets.h"
 #define queueIdendifer "com.gy.test"
+#import <objc/message.h>
+#import <objc/runtime.h>
 
 typedef void(^GYblock)(void);
 
@@ -20,6 +22,7 @@ __weak NSString *string__weak = nil;
 @property (nonatomic,strong) dispatch_queue_t queuet;
 @property (nonatomic,strong) NSCondition *condition;
 @property (nonatomic,strong) UIView *view1;
+//@property (nonatomic,copy)
 
 @end
 
@@ -29,6 +32,7 @@ __weak NSString *string__weak = nil;
 - (void)viewDidLoad {
     [super viewDidLoad];
     _condition = [[NSCondition alloc] init];
+    
     /** 方法一，需要start */
 //    NSThread *thread1 = [[NSThread alloc] initWithTarget:self selector:@selector(doSomething1:) object:@"NSThread1"];
 //    // 线程加入线程池等待CPU调度，时间很快，几乎是立刻执行
@@ -89,9 +93,40 @@ __weak NSString *string__weak = nil;
     NSString *str = [NSString stringWithFormat:@"zhuguangyang"];
     string__weak = str;
     NSLog(@"%@",string__weak);
-    
+    dispatch_semaphore_t semaphore = dispatch_semaphore_create(1);
+    dispatch_group_t group = dispatch_group_create();
+    __weak typeof(self) weakSelf = self;
+    for (int i = 0; i < 100; i++) {
+      
+     
+        dispatch_sync(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+//            dispatch_semaphore_wait(semaphore, 10);
+//            NSLog(@"==%d",i);
+            [self blockDone:^{
+                NSLog(@"==%d",i);
+//                sleep(5);
+                
+
+            }];
+//            dispatch_semaphore_signal(semaphore);
+
+//            weakSelf.block = ^{
+//                NSLog(@"==%d",i);
+//            };
+
+        });
+        NSLog(@"%d",i);
+        
+    }
+//    [self gcdSemaphore];
 }
 
+- (void)blockDone:(GYblock)blcoks {
+    
+    sleep(2);
+    blcoks();
+    
+}
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
@@ -102,6 +137,54 @@ __weak NSString *string__weak = nil;
 {
     [super viewDidAppear:animated];
     NSLog(@"%@",string__weak);
+    
+    
+    //状态栏是由当前app控制的，首先获取当前app
+    UIApplication *app = [UIApplication sharedApplication];
+    
+    // 遍历当前app的所有属性，找到关于状态栏的
+//    unsigned int outCount = 0;
+//
+//    Ivar *ivars = class_copyIvarList(app.class, &outCount);
+//
+//    for (int i = 0; i < outCount; i++) {
+//        Ivar ivar = ivars[i];
+//        printf("|%s\n", ivar_getName(ivar));
+//    }
+//
+//    id statusBar = [app valueForKeyPath:@"_hideNetworkActivityIndicatorTimer"];
+//
+    // 遍历状态栏的所有成员
+//    unsigned int outCount = 0;
+//    Ivar *ivars = class_copyIvarList([statusBar class], &outCount);
+////    class_copyMethodList(<#Class  _Nullable __unsafe_unretained cls#>, <#unsigned int * _Nullable outCount#>)
+//    for (int i = 0; i < outCount; i++) {
+//        Ivar ivar = ivars[i];
+//        printf("|%s\n", ivar_getName(ivar));
+//    }
+
+//    UIApplication *app = [UIApplication sharedApplication];
+//
+//    NSArray *children = [[[app valueForKeyPath:@"statusBar"] valueForKeyPath:@"foregroundView"] subviews];
+//
+//    for (id child in children) {
+//        if ([child isKindOfClass:NSClassFromString(@"UIStatusBarDataNetworkItemView")]) {
+//            // 遍历当前状态栏的所有属性，找到关于状态栏的
+//            unsigned int outCount = 0;
+//            Ivar *ivars = class_copyIvarList([child class], &outCount);
+//
+//            for (int i = 0; i < outCount; i++) {
+//                Ivar ivar = ivars[i];
+////                NSLog(@"|%s", ivar_getName(ivar));
+//
+//                id type = [child valueForKeyPath:[[NSString alloc]initWithCString:ivar_getName(ivar) encoding:NSUTF8StringEncoding]];
+//                NSLog(@"%s class is %@, value is %@,", ivar_getName(ivar),[type class], type);
+//            }
+//
+//
+//        }
+//    }
+    
 }
 #pragma mark - deadlock
 
@@ -319,7 +402,7 @@ __weak NSString *string__weak = nil;
             //使信号量加1
             dispatch_semaphore_signal(semaphore);
         });
-        
+        NSLog(@"%d",i);
     }
     
 }

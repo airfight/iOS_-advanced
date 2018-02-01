@@ -39,7 +39,6 @@
     
     [self performSelector:@selector(invalide) withObject:nil afterDelay:3];
     
-    
 }
 
 - (void)run
@@ -54,10 +53,9 @@
 }
 - (void)dealloc
 {
-    
+
     [_timer invalidate];
     _timer = nil;
-    [super dealloc];
 }
 
 
